@@ -1,1 +1,1 @@
-# P2HaitianResturantProject
+This is an improved version of a previos project. It is an independent and fun project designed to further improve my knowlege of the ASP.NET Core framework. I love Haitian food so I thought It'd be really cool to create a Haitian Restaurant web application.
