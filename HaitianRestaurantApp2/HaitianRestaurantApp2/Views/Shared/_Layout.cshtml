@@ -3,15 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - HaitianRestaurantApp2</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>@ViewData["Title"] - Haitian Restaurant App</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-lux.min.css" />
+    <!--    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="~/css/site.css" />
+    <!--<link rel="stylesheet" href="~/DataTables/datatables.min.css" />-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HaitianRestaurantApp2</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Merv's Restaurant 2</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,6 +29,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-info text-decoration-underline "asp-area="Admin"  asp-controller="Home" asp-action="Index">Administrator</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-info text-decoration-underline" asp-area="Employee"  asp-controller="Home" asp-action="Index">Employees</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -41,9 +53,15 @@
             &copy; 2021 - HaitianRestaurantApp2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    <script src="~/DataTables/datatables.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://kit.fontawesome.com/e19c476714.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
