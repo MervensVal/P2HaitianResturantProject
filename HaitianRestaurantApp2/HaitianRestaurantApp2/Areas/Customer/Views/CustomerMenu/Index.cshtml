@@ -5,7 +5,13 @@
 }
 
 <h1>Menu</h1>
-<table class="table table-striped table-hover table-bordered" width="100%" >
+
+<div class="row ml-auto mb-2">
+    <label class="mr-2">Filter by Category:</label>
+    <div id="categoryDropdowncustomer"></div>
+</div>
+
+<table class="table table-striped table-hover table-bordered" width="100%" id="myMenucustomer">
     <thead class="thead-dark">
         <tr>
             <th>
@@ -20,7 +26,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -45,5 +50,5 @@
 </table>
 
 @section Scripts{
-    <script src="~/js/menu.js"></script>
+    <script src="~/js/customermenu.js"></script>
 }

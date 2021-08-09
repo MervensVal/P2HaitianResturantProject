@@ -1,10 +1,10 @@
 ﻿$(document).ready(function () {
-    $('#myMenu').DataTable({
+    $('#myMenucustomer').DataTable({
         initComplete: function () {
             this.api().columns([2]).every(function () {
                 var column = this;
                 var select = $('<select class="class="form-control form-control-sm"><option value="">All Categories</option></select>')
-                    .appendTo('#categoryDropdown')
+                    .appendTo('#categoryDropdowncustomer')
                     .on('change', function () {
                         var val = $.fn.dataTable.util.escapeRegex(
                             $(this).val()
