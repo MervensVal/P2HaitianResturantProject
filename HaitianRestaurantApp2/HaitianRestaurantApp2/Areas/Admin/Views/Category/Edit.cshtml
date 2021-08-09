@@ -15,9 +15,10 @@
             <input type="hidden" asp-for="CategoryId" />
             <div class="form-group">
                 <label asp-for="CategoryName" class="control-label"></label>
-                <input asp-for="CategoryName" class="form-control" />
+                <input asp-for="CategoryName" class="form-control border border-secondary" />
                 <span asp-validation-for="CategoryName" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
