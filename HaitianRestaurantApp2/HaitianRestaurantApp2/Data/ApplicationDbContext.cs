@@ -17,5 +17,7 @@ namespace HaitianRestaurantApp2.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Menu> Menu { get; set; }
         public DbSet<Location> Locations { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
     }
 }
