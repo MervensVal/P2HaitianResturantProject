@@ -7,10 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HaitianRestaurantApp2.Data;
 using HaitianRestaurantApp2.Models;
+using Microsoft.AspNetCore.Authorization;
+using HaitianRestaurantApp2.Utility;
 
 namespace HaitianRestaurantApp2.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = Constants.RoleAdmin)]
+
     public class LocationController : Controller
     {
         private readonly ApplicationDbContext _context;
