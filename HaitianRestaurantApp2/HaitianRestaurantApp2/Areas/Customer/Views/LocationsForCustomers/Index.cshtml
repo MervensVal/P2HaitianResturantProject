@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HaitianRestaurantApp2.Models.Location>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-info"><span style="color:red;">R</span>estaurant <span style="color:red;">L</span>ocations</h1>
+<br>
+    @foreach (var item in Model)
+    {
+            <div class="card-body mb-3 opacity-50" style="border-top: solid; border-top-color: dodgerblue; ">
+                <h4 class="card-title">@Html.DisplayFor(modelItem => item.StreetAddress)</h4>
+                <h4 class="card-title">@Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(modelItem => item.State), @Html.DisplayFor(modelItem => item.ZipCode)</h4>
+                <h4 class="card-title">@Html.DisplayFor(modelItem => item.PhoneNumber)</h4>
+            </div>
+    }
+
+@section Scripts{
+    <script src="~/js/locationsforcustomer.js"></script>
+}
+
+
+
+
+

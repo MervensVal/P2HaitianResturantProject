@@ -11,5 +11,7 @@ namespace HaitianRestaurantApp2.Utility
         public const string RoleAdmin = "Administrator";
         public const string RoleEmployee = "Employee";
         public const string RoleCustomer = "Customer";
+
+        public const string ssShoppingCart = "Shopping Cart Session";
     }
 }

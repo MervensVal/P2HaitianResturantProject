@@ -4,14 +4,16 @@ using HaitianRestaurantApp2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HaitianRestaurantApp2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210819165315_AddShCartOrDetailsandOrHeader")]
+    partial class AddShCartOrDetailsandOrHeader
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -181,12 +183,17 @@ namespace HaitianRestaurantApp2.Data.Migrations
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
+
                     b.Property<int>("MenuItemId")
                         .HasColumnType("int");
 
                     b.HasKey("ShoppingCartId");
 
                     b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("LocationId");
 
                     b.HasIndex("MenuItemId");
 
@@ -463,6 +470,12 @@ namespace HaitianRestaurantApp2.Data.Migrations
                         .WithMany()
                         .HasForeignKey("ApplicationUserId");
 
+                    b.HasOne("HaitianRestaurantApp2.Models.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("HaitianRestaurantApp2.Models.Menu", "Menu")
                         .WithMany()
                         .HasForeignKey("MenuItemId")
@@ -470,6 +483,8 @@ namespace HaitianRestaurantApp2.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
+
+                    b.Navigation("Location");
 
                     b.Navigation("Menu");
                 });
