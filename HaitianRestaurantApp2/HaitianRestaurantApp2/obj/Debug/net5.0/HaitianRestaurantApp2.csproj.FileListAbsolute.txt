@@ -225,3 +225,5 @@ C:\Users\valme\source\repos\MervensVal\P2HaitianResturantProject\HaitianRestaura
 C:\Users\valme\source\repos\MervensVal\P2HaitianResturantProject\HaitianRestaurantApp2\HaitianRestaurantApp2\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\valme\source\repos\MervensVal\P2HaitianResturantProject\HaitianRestaurantApp2\HaitianRestaurantApp2\obj\Debug\net5.0\Razor\Areas\User\Views\Home\Index.cshtml.g.cs
 C:\Users\valme\source\repos\MervensVal\P2HaitianResturantProject\HaitianRestaurantApp2\HaitianRestaurantApp2\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\Index.cshtml.g.cs
+C:\Users\valme\source\repos\MervensVal\P2HaitianResturantProject\HaitianRestaurantApp2\HaitianRestaurantApp2\obj\Debug\net5.0\Razor\Areas\Customer\Views\LocationsForCustomers\Index.cshtml.g.cs
+C:\Users\valme\source\repos\MervensVal\P2HaitianResturantProject\HaitianRestaurantApp2\HaitianRestaurantApp2\obj\Debug\net5.0\Razor\Areas\Customer\Views\CustomerMenu\Details.cshtml.g.cs

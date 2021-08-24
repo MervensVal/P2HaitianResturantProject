@@ -1,0 +1,52 @@
+﻿@model HaitianRestaurantApp2.Models.ShoppingCart
+
+<form method="post">
+    <input hidden asp-for="MenuItemId"/>
+    <br/>
+    <br/>
+    <div class="container background-White col-10">
+        <div class="card">
+            <div class="card-body">
+                <div class="container rounded p-2">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="col-12 col-md-12">
+                                <h1 class="text-primary">@Model.Menu.ItemName</h1>
+                                <h3 class="">$@Model.Menu.Price</h3>
+                                <hr/>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                @if (Model.Menu.Description == null)
+                                {
+                                    <p class="pt-2" style="height:30px;"> No Description Available</p>
+
+                                }
+                                else
+                                {
+                                <p class="pt-2" style="height:30px;"> @Model.Menu.Description</p>
+                                }
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p class="pt-2" style="height:30px;"></p>
+                            </div>
+                            <div class="row pl-2">
+                                <div class="col-4 text-primary"><h4>Count</h4></div>
+                                <div class="col-8"><input class="form-control border border-primary" type="number" min="1" max="20"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-12 col-md-6 p-2">
+                        <a class="btn btn-primary form-control " style="height:50px;" asp-action="Index">Back to List</a>
+                    </div>
+                    <div class="col-12 col-md-6 p-2">
+                        <button type="submit" value="Add to Cart" class="btn btn-success form-control" style="height:50px;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
