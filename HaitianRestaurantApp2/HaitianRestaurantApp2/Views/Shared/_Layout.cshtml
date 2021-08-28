@@ -1,4 +1,7 @@
 ﻿@using HaitianRestaurantApp2.Utility
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,11 +45,33 @@
                         @if (User.IsInRole(Constants.RoleAdmin) || User.IsInRole(Constants.RoleEmployee))
                         {
 
-                            <li>
-                                <a class="nav-link text-info text-decoration-underline" asp-area="Employee" asp-controller="Home" asp-action="Index">Employees</a>
-                            </li>
+                    <li>
+                        <a class="nav-link text-info text-decoration-underline" asp-area="Employee" asp-controller="ManageOrders" asp-action="Index">Manage Orders</a>
+                    </li>
                         }
-                        </ul>
+
+                        @if (!User.IsInRole(Constants.RoleAdmin) || !User.IsInRole(Constants.RoleEmployee)) { 
+                            @if (HttpContextAccessor.HttpContext.Session.GetInt32(Constants.ssShoppingCart) != null)
+                            {
+                                <li style="color:white" ;>
+                                    <a asp-area="Customer" asp-controller="Cart" asp-action="Index" class="nav-link">
+                                        @{
+                                            var count = HttpContextAccessor.HttpContext.Session.GetInt32(Constants.ssShoppingCart);
+                                        }
+                                        <i class="fas fa-shopping-cart"> &nbsp; (@count)</i>
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li style="color:white" ;>
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-shopping-cart"> &nbsp; (0)</i>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>

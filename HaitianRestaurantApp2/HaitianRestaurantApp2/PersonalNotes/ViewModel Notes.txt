@@ -1,0 +1,17 @@
+﻿ViewModel in the MVC design pattern is very similar to a "model". The major difference between "Model" and "ViewModel"
+is that we use a ViewModel only in rendering views. We put all our ViewModel classes in a "ViewModels" named folder, we
+create this folder. 
+
+
+Helpful link
+
+https://www.c-sharpcorner.com/uploadfile/abhikumarvatsa/what-is-model-and-viewmodel-in-mvc-pattern/#:~:text=ViewModel%20in%20the%20MVC%20design%20pattern%20is%20very,create%20this%20folder.%20Understand%20it%20with%20an%20example
+
+//------------------------------------------------------------------------------------------------------------------------
+
+A view model represents the data that you want to display on your view/page, whether it be used for static text or for 
+input values (like textboxes and dropdown lists) that can be added to the database (or edited). It is something 
+different than your domain model. It is a model for the view.
+
+Helpful link
+https://stackoverflow.com/questions/11064316/what-is-viewmodel-in-mvc

@@ -11,6 +11,9 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using HaitianRestaurantApp2.Data;
+using Microsoft.AspNetCore.Http;
+using HaitianRestaurantApp2.Utility;
 
 namespace HaitianRestaurantApp2.Areas.Identity.Pages.Account
 {
@@ -20,14 +23,16 @@ namespace HaitianRestaurantApp2.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly ApplicationDbContext _context;
 
         public LoginModel(SignInManager<IdentityUser> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<IdentityUser> userManager)
+            UserManager<IdentityUser> userManager, ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _context = context;
         }
 
         [BindProperty]
@@ -84,6 +89,16 @@ namespace HaitianRestaurantApp2.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                    var currentUser = _context.ApplicationUsers.FirstOrDefault(u => u.Email == Input.Email);
+                    if (currentUser != null)
+                    {
+                        if (currentUser.Role != Constants.RoleAdmin || currentUser.Role != Constants.RoleEmployee)
+                        {
+                            var count = _context.ShoppingCarts.Where(c => c.ApplicationUserId == currentUser.Id).ToList().Count();
+                            // Set session with the number of items in the  cart 
+                            HttpContext.Session.SetInt32(Constants.ssShoppingCart, count);
+                        }
+                    }
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }

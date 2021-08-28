@@ -1,0 +1,54 @@
+﻿@model IEnumerable<HaitianRestaurantApp2.Models.Menu>
+
+    @{
+    ViewData["Title"] = "Index";
+    }
+
+    <h1>Menu</h1>
+
+    <div class="row ml-auto mb-2">
+        <label class="mr-2">Filter by Category:</label>
+        <div id="categoryDropdowncustomer"></div>
+    </div>
+
+    <table class="table table-striped table-hover table-bordered" width="100%" id="myMenucustomer">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ItemName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    @section Scripts{
+    <script src="~/js/customermenu.js"></script>
+    }

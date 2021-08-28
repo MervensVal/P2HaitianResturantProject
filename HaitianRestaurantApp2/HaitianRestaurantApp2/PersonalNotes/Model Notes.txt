@@ -1,0 +1,9 @@
+﻿What is Model or Domain Model?
+
+Actually, the word "model" has hundreds of meanings in software development, but here we will talk about "model" in the
+context of a MVC design pattern. I would define a model as an object that we use to send information to the database, to
+perform business calculations and to render a view. In other words, "model" represents the domain of the application 
+that helps us to save, create, update and delete records. Usually we put all our model classes in the Model folder.
+
+
+
