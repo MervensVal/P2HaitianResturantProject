@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 namespace HaitianRestaurantApp2.Areas.Customer.Controllers
 {
     [Area("Customer")]
-    public class LocationsForCustomersController : Controller
+    public class LocationsListController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public LocationsForCustomersController(ApplicationDbContext context)
+        public LocationsListController(ApplicationDbContext context)
         {
             _context = context;
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HaitianRestaurantApp2.Areas.Employee.Controllers
 {
     [Area("Employee")]
-    public class HomeController : Controller
+    public class ManageOrdersController : Controller
     {
         public IActionResult Index()
         {

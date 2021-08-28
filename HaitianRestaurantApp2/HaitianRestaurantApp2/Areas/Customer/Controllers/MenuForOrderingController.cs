@@ -18,12 +18,12 @@ namespace HaitianRestaurantApp2.Areas.Customer.Controllers
 {
     [Authorize(Roles =Constants.RoleCustomer)]
     [Area("Customer")]
-    public class CustomerMenuController : Controller
+    public class MenuForOrderingController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public CustomerMenuController(ApplicationDbContext context, UserManager<IdentityUser> uerManager) 
+        public MenuForOrderingController(ApplicationDbContext context, UserManager<IdentityUser> uerManager) 
         {
             _context = context;
             _userManager = uerManager;
