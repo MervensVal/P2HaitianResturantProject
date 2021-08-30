@@ -126,20 +126,20 @@ namespace HaitianRestaurantApp2.Areas.Identity.Pages.Account
                     //checking to see if a role exists
                     //if this role does not exist in the database create the role
 
-                    if (!await _roleManager.RoleExistsAsync(Constants.RoleAdmin)) 
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(Constants.RoleAdmin));
-                    }
+                    //if (!await _roleManager.RoleExistsAsync(Constants.RoleAdmin)) 
+                    //{
+                    //    await _roleManager.CreateAsync(new IdentityRole(Constants.RoleAdmin));
+                    //}
 
-                    if (!await _roleManager.RoleExistsAsync(Constants.RoleEmployee))
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(Constants.RoleEmployee));
-                    }
+                    //if (!await _roleManager.RoleExistsAsync(Constants.RoleEmployee))
+                    //{
+                    //    await _roleManager.CreateAsync(new IdentityRole(Constants.RoleEmployee));
+                    //}
 
-                    if (!await _roleManager.RoleExistsAsync(Constants.RoleCustomer))
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(Constants.RoleCustomer));
-                    }
+                    //if (!await _roleManager.RoleExistsAsync(Constants.RoleCustomer))
+                    //{
+                    //    await _roleManager.CreateAsync(new IdentityRole(Constants.RoleCustomer));
+                    //}
 
 
                     if (user.Role == null)
