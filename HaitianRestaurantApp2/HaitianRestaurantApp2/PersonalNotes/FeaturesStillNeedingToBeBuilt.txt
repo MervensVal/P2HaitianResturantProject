@@ -1,0 +1,7 @@
+﻿1. Make the shopping cart icon unavailable to Administrator and Employee
+2. Make sure Administrator cannot lock itself
+3. Finish Manage Orders Feature
+4. Try to add locations foreign key for Employee accounts 
+- Each employee and order must be associated with a location
+5. Fix hambuger icon and improve UI
+6. (Maybe) create simple orders reports feature 

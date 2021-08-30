@@ -50,7 +50,7 @@
                     </li>
                         }
 
-                        @if (!User.IsInRole(Constants.RoleAdmin) || !User.IsInRole(Constants.RoleEmployee)) { 
+                        @if (User.IsInRole(Constants.RoleCustomer)) { 
                             @if (HttpContextAccessor.HttpContext.Session.GetInt32(Constants.ssShoppingCart) != null)
                             {
                                 <li style="color:white" ;>
